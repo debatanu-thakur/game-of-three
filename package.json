@@ -19,6 +19,7 @@
   "homepage": "https://github.com/debatanu-thakur/game-of-three#readme",
   "dependencies": {
     "express": "^4.15.2",
+    "jquery": "1",
     "nodemon": "^1.11.0",
     "socket.io": "^1.7.3"
   }
