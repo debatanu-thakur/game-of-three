@@ -1,19 +1,22 @@
 const express = require('express');
 const app = express();
+const socketFn = require('./server/socket');
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
-const jquery = require('jquery');
-const socketFn = require('./server/socket');
+
+app.set('port', (process.env.PORT || 3000));
 
 app.use(express.static(__dirname + '/src'));
 
-app.get('/', function(req, res){
-  res.send('/index.html');
+
+app.get('/', function(request, response) {
+  response.render('/index.html');
 });
 
-//socket.io
 io.on('connection', socketFn.bind(null, io));
 
-http.listen(3000, function(){
-  console.log('listening on *:3000');
+http.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
 });
+
+
