@@ -12,6 +12,7 @@
       #messages li { padding: 5px 10px; }
       #messages li:nth-child(odd) { background: #eee; }
       .choice { width: 50%; height: 50px;}
+      .win {display: none;}
     </style>
   </head>
   <body>
@@ -24,6 +25,10 @@
       </select>
       <button class="send">Start</button>
     </form>
+    <section class="win">
+      <h1>The game is completed</h1>
+      <h3>Player <span class="player"></span> has won</h3>
+    </section>
     <script src="/socket.io/socket.io.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.js"></script>
     <script src="main.js"></script>
