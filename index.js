@@ -13,7 +13,7 @@ app.get('/', function(request, response) {
   response.render('/index.html');
 });
 
-io.on('connection', socketFn.bind(null, io));
+io.on('connection', socketFn.connect.bind(null, io));
 
 http.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
