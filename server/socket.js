@@ -23,7 +23,6 @@ const roomFn = function({io, socket}, room) {
 const checkMessage = function(io, msg, room) {
     const gameClass = findGameClass(room);
 
-    console.log(gameClass);
     switch (msg) {
         case '-1':
             gameClass.randomCurrent = (parseInt(gameClass.randomCurrent, 10) - 1) / 3
